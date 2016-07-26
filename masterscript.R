@@ -4,11 +4,12 @@
 #                            RCM van Aert (r.c.m.vanaert@tilburguniversity.edu)      #
 #                            MALM van Assen (m.a.l.m.vanassen@tilburguniversity.edu) #
 ######################################################################################
-
+Sys.setlocale("LC_ALL", "English") # set the system environment to English.
+Sys.setenv(LANG = "en") # set the feedback language to English
 setwd(choose.dir())
 
 # source functions
-if(!require(httr)){install.packages('httr')}
+# if(!require(httr)){install.packages('httr')}
 library(httr)
 info <- GET('https://osf.io/b2vn7/?action=download', write_disk('functions.r', overwrite = TRUE)) #downloads data file from the OSF
 source('functions.r')
